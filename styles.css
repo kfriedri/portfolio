@@ -1,10 +1,12 @@
 :root {
   --bg: #ffffff;
   --bg-raised: #f4f4f4;
-  --ink: #111111;
-  --ink-soft: #555555;
-  --grey: #9a9a9a;
-  --line: #e5e5e5;
+  --ink: #0a0a0a;
+  --ink-soft: #4a4a4a;
+  --grey: #8a8a8a;
+  --line: #e2e2e2;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, sans-serif;
   --frame-max: 1180px;
   --gap: clamp(20px, 5vw, 56px);
 }
@@ -16,19 +18,19 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 a { color: inherit; }
 
 h1, h2, h3 {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
 .wrap {
@@ -65,9 +67,37 @@ header {
   flex-wrap: wrap;
 }
 .wordmark {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  position: relative;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  line-height: 1;
+  color: var(--ink);
+  transition: opacity 0.15s ease;
+}
+/* Fine hairline under the name — editorial signet feel */
+.wordmark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 26px;
+  height: 1px;
+  background: var(--ink);
+}
+.wordmark:hover, .wordmark:focus-visible { opacity: 0.6; }
+/* Small "Fotografie" tag next to the name */
+.wordmark-sub {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-left: 10px;
+  vertical-align: 0.22em;
 }
 nav ul {
   list-style: none;
@@ -77,8 +107,10 @@ nav ul {
 }
 nav a {
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.72rem;
   font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--ink-soft);
   transition: color 0.15s ease;
 }
