@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Konstantin Friedrich · Fotografie</title>
 <meta name="description" content="Konstantin Friedrich, Schwarz-Weiß-Fotografie aus Leidenschaft. Porträts in natürlichem Licht, reduziert und ehrlich.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/png" href="bilder/logo.png">
 <link rel="apple-touch-icon" href="bilder/logo.png">
 <link rel="stylesheet" href="styles.css">
@@ -131,8 +130,8 @@
     </figure>
     <div class="about-text">
       <h2>Über mich</h2>
-      <p>Ich bin Konstantin, 40, und die Fotografie hat mich erst spät richtig gepackt. Angefangen habe ich nebenbei, heute ist es die Sache, für die ich das Wochenende freihalte. Gefunden habe ich meinen Weg im Schwarz-Weiß.</p>
-      <p>Im Schwarz-Weiß lebt ein Bild vor allem von Licht und Form, und diese Reduktion zwingt mich, genauer hinzuschauen. Genau das macht für mich den Reiz aus. Die Farbe lasse ich deshalb aber nicht liegen, manchmal erzählt gerade sie die Geschichte besser. So oder so stelle ich wenig und warte lieber auf den Moment, in dem jemand sich vergisst.</p>
+      <p>Hey, ich bin Konstantin oder einfach Kostja. Ich fotografiere gerne Menschen, so wie sie tatsächlich sind: im Fenster­licht, in Bewegung, in ihrer eigenen Umgebung.</p>
+      <p>Mein Ansatz ist zurückhaltend. Wenig Inszenierung, viel Beobachtung. Das Ergebnis sind Bilder, die in fünf Jahren noch genauso gut funktionieren wie heute.</p>
     </div>
   </section>
 
@@ -140,12 +139,16 @@
     <h2>Kontakt</h2>
     <p class="contact-intro">Ob Porträtsitzung, Zusammenarbeit oder einfach ein Austausch über Fotografie: Schreib mir gern. Ich freue mich über jede Nachricht und antworte in der Regel innerhalb weniger Tage.</p>
     <div class="contact-links">
-      <a href="mailto:hallo@konstantinfriedrich.de">hallo@konstantinfriedrich.de</a>
+      <a class="email-link" data-user="konstantin.friedrich" data-domain="e.mail.de" href="#">E-Mail anzeigen</a>
     </div>
   </section>
 
   <footer>
     <span>© 2026 Konstantin Friedrich</span>
+    <nav class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
   </footer>
 </div>
 

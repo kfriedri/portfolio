@@ -8,3 +8,15 @@ document.addEventListener('click', function (event) {
   event.preventDefault();
   target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
 });
+
+// E-Mail-Adresse erst im Browser zusammensetzen, damit sie nicht im
+// HTML-Quelltext steht und von Crawlern/Spam-Bots erfasst werden kann.
+document.querySelectorAll('.email-link').forEach(function (link) {
+  var user = link.getAttribute('data-user');
+  var domain = link.getAttribute('data-domain');
+  if (!user || !domain) return;
+
+  var address = user + '@' + domain;
+  link.href = 'mailto:' + address;
+  link.textContent = address;
+});
