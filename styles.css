@@ -67,7 +67,9 @@ header {
   flex-wrap: wrap;
 }
 .wordmark {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--serif);
   font-size: clamp(1.2rem, 3.5vw, 1.55rem);
   font-weight: 500;
@@ -77,15 +79,13 @@ header {
   color: var(--ink);
   transition: opacity 0.15s ease;
 }
-/* Fine hairline under the name — editorial signet feel */
-.wordmark::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 26px;
-  height: 1px;
-  background: var(--ink);
+/* Logo monogram (white border trimmed); shown at native aspect, no upscale */
+.wordmark-logo {
+  display: block;
+  height: 58px;
+  aspect-ratio: 580 / 748;
+  background: url("bilder/logo-trim.png") center / contain no-repeat;
+  flex-shrink: 0;
 }
 .wordmark:hover, .wordmark:focus-visible { opacity: 0.6; }
 /* Small "Fotografie" tag next to the name */
@@ -96,8 +96,6 @@ header {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--grey);
-  margin-left: 10px;
-  vertical-align: 0.22em;
 }
 nav ul {
   list-style: none;
@@ -286,6 +284,11 @@ footer {
   flex-wrap: wrap;
   gap: 10px;
   border-top: 1px solid var(--line);
+}
+
+/* Narrow / mobile: hide the "Fotografie" tag so the header stays on one line */
+@media (max-width: 560px) {
+  .wordmark-sub { display: none; }
 }
 
 /* Tablet and up */
