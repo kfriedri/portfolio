@@ -363,7 +363,7 @@ footer {
     gap: var(--gap);
     align-items: start;
   }
-  .portrait { margin: 0 auto; width: 200px; justify-self: center; }
+  .portrait { margin: 0 auto; width: 200px; justify-self: center; align-self: center; }
   .contact { padding: 70px 0 100px; }
 }
 
